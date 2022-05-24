@@ -3,9 +3,10 @@ from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
 def pytest_addoption(parser):
+    parser.addoption('--language', default="en", )
     parser.addoption('--browser_name', default=None, action='store',
                      help="Choose browser: chrome or firefox")
-    parser.addoption('--language', default="en", )
+
 
 @pytest.fixture(scope="function")
 def browser(request):
